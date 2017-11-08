@@ -4,7 +4,18 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d"
+        xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+        xmlns:System="clr-namespace:System;assembly=mscorlib"
+       
         Title="sampleForm" Height="300" Width="600">
+    <Window.Resources>
+        
+    </Window.Resources>
+    <i:Interaction.Triggers>
+        <i:EventTrigger EventName="">
+            
+        </i:EventTrigger>
+    </i:Interaction.Triggers>
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="22px" ></RowDefinition>
@@ -14,7 +25,7 @@
             <RowDefinition Height="22px"></RowDefinition>
             <RowDefinition Height="22px"></RowDefinition>
         </Grid.RowDefinitions>
-       
+
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="100"></ColumnDefinition>
             <ColumnDefinition Width="100"></ColumnDefinition>
@@ -24,12 +35,24 @@
             <ColumnDefinition Width="100"></ColumnDefinition>
         </Grid.ColumnDefinitions>
         <TextBlock Grid.Column="0" Grid.Row="0" VerticalAlignment="Center" HorizontalAlignment="Center" Text="Name :"></TextBlock>
-        <TextBox Grid.Column="1" Grid.Row="0" ></TextBox>
+        <TextBox Grid.Column="1" Grid.Row="0"  Text="{Binding sampleFormModelProperty.Name,Mode=TwoWay,Source={StaticResource Locator}}"></TextBox>
 
-        <TextBlock Grid.Column="2" Grid.Row="0" VerticalAlignment="Center" HorizontalAlignment="Center" Text="Age :"></TextBlock>
-        <TextBox Grid.Column="3" Grid.Row="0" ></TextBox>
+        <TextBlock Grid.Column="2" Grid.Row="0" VerticalAlignment="Center" HorizontalAlignment="Center" Text="Age :">
+           
+        </TextBlock>
+        <TextBox Grid.Column="3" Grid.Row="0" Text="{Binding sampleFormModelProperty.Age,Source={StaticResource Locator},Mode=TwoWay}" ></TextBox>
 
         <TextBlock Grid.Column="0" Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center" Text="DOB :"></TextBlock>
-        <DatePicker Grid.Column="1" Grid.Row="1"  ></DatePicker>
+        <DatePicker Grid.Column="1" Grid.Row="1" Text="dd-MMM-yyyy" SelectedDate="{Binding sampleFormModelProperty.DOB,Source={StaticResource Locator},Mode=TwoWay}"></DatePicker>
+
+        <TextBlock Grid.Column="2" Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center" Text="Location"></TextBlock>
+        <ComboBox SelectedItem="" Grid.Column="3" Grid.Row="1">
+            <ComboBox.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock></TextBlock>
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
+        </ComboBox>
+        <Button Content="Save" Grid.Column="0" Grid.Row="2" Command="{Binding sampleFormViewModelProperty.saveDetails,Source={StaticResource Locator}}"></Button>
     </Grid>
 </Window>

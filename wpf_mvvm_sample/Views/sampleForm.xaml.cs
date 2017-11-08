@@ -1,16 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
+using wpf_mvvm_sample.Models;
 
 namespace wpf_mvvm_sample.Views
 {
@@ -22,6 +12,11 @@ namespace wpf_mvvm_sample.Views
         public sampleForm()
         {
             InitializeComponent();
+            List<LocationModel> lstLocation = new List<LocationModel>();
+            lstLocation.Add(new LocationModel() { LocationId = 1, LocationName = "Hyderabad" });
+            lstLocation.Add(new LocationModel() { LocationId = 2, LocationName = "Secunderabad" });
+            lstLocation.Add(new LocationModel() { LocationId = 3, LocationName = "Godavarikhani" });
+
         }
     }
 }
