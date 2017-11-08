@@ -65,7 +65,13 @@
                 <DataGridTemplateColumn Header="Action" Width="80">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <Button Content="Edit"></Button>
+                            <Button Content="Edit">
+                                <EventTrigger>
+                                    <EventTrigger.RoutedEvent>
+                                        
+                                    </EventTrigger.RoutedEvent>
+                                </EventTrigger>
+                            </Button>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
