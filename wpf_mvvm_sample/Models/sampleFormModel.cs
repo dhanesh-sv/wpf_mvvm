@@ -9,14 +9,14 @@ namespace wpf_mvvm_sample.Models
 {
     class sampleFormModel : NotifyPropertyChangedBase
     {
-        private string _Name;
-        public string Name
+        private string _userName;
+        public string userName
         {
-            get { return _Name; }
+            get { return _userName; }
             set
             {
-                _Name = value;
-                RaisePropertyChanged("Name");
+                _userName = value;
+                RaisePropertyChanged("userName");
             }
         }
 
@@ -52,5 +52,7 @@ namespace wpf_mvvm_sample.Models
                 RaisePropertyChanged("Location");
             }
         }
+
+        
     }
 }
